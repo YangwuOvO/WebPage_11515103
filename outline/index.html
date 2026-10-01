@@ -1,0 +1,2474 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>小歪飲料 XIAO WAI TEA ｜ 高級茶葉現萃飲品專門店</title>
+  <meta name="description" content="小歪飲料專注於高級原葉茶飲，嚴選台灣高山與世界名莊茶葉，低溫慢萃、原葉現泡，為愛喝飲料的你獻上純粹回甘的極致杯中風味。">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       CSS Variables - 以高階茶葉與灰色調 (Grey Aesthetic) 為主核心
+       ========================================================================== */
+    :root {
+      --color-charcoal-900: #14171a;
+      --color-charcoal-800: #1e2227;
+      --color-charcoal-700: #2b3038;
+      --color-slate-600: #495057;
+      --color-grey-500: #6c757d;
+      --color-grey-400: #adb5bd;
+      --color-grey-300: #ced4da;
+      --color-grey-200: #dee2e6;
+      --color-grey-100: #e9ecef;
+      --color-grey-50: #f4f6f8;
+      --color-grey-pure: #f8f9fa;
+      --color-white: #ffffff;
+      
+      /* 高級茶韻點綴色 (高雅低調金銀茶香感) */
+      --color-tea-gold: #c5a059;
+      --color-tea-gold-hover: #b08d46;
+      --color-tea-green: #52634f;
+      --color-badge-bg: #e3e7eb;
+
+      --font-sans: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: 'Noto Serif TC', "Songti TC", Georgia, serif;
+      
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+      
+      --shadow-sm: 0 2px 6px rgba(20, 23, 26, 0.05);
+      --shadow-md: 0 8px 24px rgba(20, 23, 26, 0.08);
+      --shadow-lg: 0 16px 40px rgba(20, 23, 26, 0.12);
+      
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset & Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--color-grey-pure);
+      color: var(--color-charcoal-800);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      transition: var(--transition);
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ==========================================================================
+       Top Announcement Bar
+       ========================================================================== */
+    .announcement-bar {
+      background-color: var(--color-charcoal-900);
+      color: var(--color-grey-200);
+      font-size: 0.825rem;
+      padding: 8px 16px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--color-charcoal-700);
+    }
+
+    .announcement-bar strong {
+      color: var(--color-tea-gold);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       Header & Navigation
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(248, 249, 250, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-grey-200);
+      transition: var(--transition);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      color: var(--color-charcoal-900);
+    }
+
+    .logo-symbol {
+      width: 38px;
+      height: 38px;
+      background: var(--color-charcoal-800);
+      color: var(--color-grey-pure);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--color-charcoal-700);
+    }
+
+    .brand-sub {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      color: var(--color-grey-500);
+      letter-spacing: 0.15em;
+      display: block;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-top: -3px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--color-charcoal-700);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-charcoal-800);
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--color-charcoal-900);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-cart-tray {
+      position: relative;
+      background: var(--color-grey-100);
+      color: var(--color-charcoal-800);
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--color-grey-300);
+    }
+
+    .btn-cart-tray:hover {
+      background: var(--color-grey-200);
+    }
+
+    .cart-counter {
+      background: var(--color-charcoal-900);
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      padding: 1px 7px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--color-charcoal-800);
+      color: var(--color-white);
+      padding: 11px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      box-shadow: var(--shadow-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-charcoal-900);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--color-grey-400);
+      color: var(--color-charcoal-800);
+      padding: 11px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-grey-200);
+      border-color: var(--color-charcoal-700);
+    }
+
+    /* Mobile Hamburger */
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      width: 30px;
+      height: 24px;
+      justify-content: center;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: var(--color-charcoal-800);
+      transition: var(--transition);
+    }
+
+    /* ==========================================================================
+       Hero Section
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding: 90px 0 110px;
+      background: linear-gradient(170deg, #f4f6f8 0%, #e9ecef 60%, #dee2e6 100%);
+      border-bottom: 1px solid var(--color-grey-300);
+      overflow: hidden;
+    }
+
+    /* Subtle Architectural Tea Grid background pattern */
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(108, 117, 125, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108, 117, 125, 0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content {
+      max-width: 620px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(30, 34, 39, 0.08);
+      border: 1px solid rgba(73, 80, 87, 0.2);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-charcoal-800);
+      margin-bottom: 24px;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-tag svg {
+      color: var(--color-tea-gold);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      line-height: 1.25;
+      font-weight: 900;
+      color: var(--color-charcoal-900);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title span.highlight-tea {
+      position: relative;
+      display: inline-block;
+      color: var(--color-charcoal-900);
+    }
+
+    .hero-title span.highlight-tea::after {
+      content: "";
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      background: rgba(197, 160, 89, 0.28);
+      z-index: -1;
+      border-radius: 2px;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      color: var(--color-slate-600);
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--color-grey-300);
+    }
+
+    .metric-item strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 1.7rem;
+      color: var(--color-charcoal-900);
+      line-height: 1.1;
+    }
+
+    .metric-item span {
+      font-size: 0.85rem;
+      color: var(--color-grey-500);
+    }
+
+    /* Hero Visual Card (Artisan Tea Artwork) */
+    .hero-visual {
+      position: relative;
+    }
+
+    .tea-hero-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-grey-300);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      background-clip: padding-box;
+    }
+
+    .tea-hero-art {
+      width: 100%;
+      height: 290px;
+      background: linear-gradient(135deg, #2b3038 0%, #1e2227 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--color-charcoal-700);
+      color: var(--color-grey-pure);
+    }
+
+    .tea-hero-art::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197, 160, 89, 0.22) 0%, transparent 70%);
+      filter: blur(20px);
+    }
+
+    .floating-cup {
+      animation: float 4s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .tea-spec-row {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      text-align: center;
+    }
+
+    .tea-spec-box {
+      background: var(--color-grey-50);
+      padding: 12px 8px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-grey-200);
+    }
+
+    .tea-spec-box small {
+      font-size: 0.725rem;
+      color: var(--color-grey-500);
+      display: block;
+    }
+
+    .tea-spec-box span {
+      font-weight: 700;
+      color: var(--color-charcoal-800);
+      font-size: 0.9rem;
+    }
+
+    .floating-promo-badge {
+      position: absolute;
+      top: -16px;
+      right: -16px;
+      background: var(--color-charcoal-900);
+      color: var(--color-tea-gold);
+      border: 2px solid var(--color-white);
+      padding: 10px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.825rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ==========================================================================
+       Features / Why Xiao Wai
+       ========================================================================== */
+    .section-py {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+
+    .section-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--color-grey-500);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      color: var(--color-charcoal-900);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      color: var(--color-grey-500);
+      font-size: 1.05rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-grey-200);
+      padding: 32px 24px;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-grey-400);
+    }
+
+    .feature-icon-wrapper {
+      width: 54px;
+      height: 54px;
+      background: var(--color-grey-100);
+      color: var(--color-charcoal-800);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 1px solid var(--color-grey-200);
+    }
+
+    .feature-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-charcoal-900);
+      margin-bottom: 12px;
+    }
+
+    .feature-desc {
+      color: var(--color-slate-600);
+      font-size: 0.925rem;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       Drink Menu Section - 賣很多飲料 (Rich Menu & Filter)
+       ========================================================================== */
+    .menu-section {
+      background: var(--color-white);
+      border-top: 1px solid var(--color-grey-200);
+      border-bottom: 1px solid var(--color-grey-200);
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px;
+    }
+
+    .tab-btn {
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.925rem;
+      font-weight: 600;
+      color: var(--color-slate-600);
+      background: var(--color-grey-50);
+      border: 1px solid var(--color-grey-200);
+      transition: var(--transition);
+    }
+
+    .tab-btn:hover {
+      background: var(--color-grey-100);
+      color: var(--color-charcoal-900);
+    }
+
+    .tab-btn.active {
+      background: var(--color-charcoal-800);
+      color: var(--color-white);
+      border-color: var(--color-charcoal-800);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .drink-card {
+      background: var(--color-grey-pure);
+      border: 1px solid var(--color-grey-200);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .drink-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-grey-400);
+      transform: translateY(-4px);
+    }
+
+    .drink-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .drink-badge {
+      font-size: 0.725rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      background: var(--color-grey-200);
+      color: var(--color-charcoal-700);
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.05em;
+    }
+
+    .drink-badge.special {
+      background: #efe6d5;
+      color: #7d5918;
+    }
+
+    .drink-price {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-charcoal-900);
+    }
+
+    .drink-price small {
+      font-size: 0.8rem;
+      color: var(--color-grey-500);
+      font-weight: normal;
+    }
+
+    .drink-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-charcoal-900);
+      margin-bottom: 6px;
+    }
+
+    .drink-subname {
+      font-size: 0.75rem;
+      color: var(--color-grey-400);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .drink-desc {
+      font-size: 0.88rem;
+      color: var(--color-slate-600);
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .drink-flavor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .flavor-tag {
+      font-size: 0.75rem;
+      background: var(--color-white);
+      color: var(--color-grey-500);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-grey-200);
+    }
+
+    .drink-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px dashed var(--color-grey-200);
+    }
+
+    .sugar-ice-tip {
+      font-size: 0.75rem;
+      color: var(--color-grey-500);
+    }
+
+    .btn-add-drink {
+      background: var(--color-charcoal-800);
+      color: var(--color-white);
+      padding: 7px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-add-drink:hover {
+      background: var(--color-charcoal-900);
+    }
+
+    /* ==========================================================================
+       Artisanal Process (製茶工藝與堅持)
+       ========================================================================== */
+    .process-section {
+      background: var(--color-charcoal-900);
+      color: var(--color-grey-pure);
+      position: relative;
+    }
+
+    .process-section .section-eyebrow {
+      color: var(--color-tea-gold);
+    }
+
+    .process-section .section-title {
+      color: var(--color-white);
+    }
+
+    .process-section .section-subtitle {
+      color: var(--color-grey-400);
+    }
+
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .process-step {
+      background: var(--color-charcoal-800);
+      border: 1px solid var(--color-charcoal-700);
+      padding: 32px 24px;
+      border-radius: var(--radius-md);
+      position: relative;
+    }
+
+    .process-num {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--color-tea-gold);
+      line-height: 1;
+      margin-bottom: 16px;
+      display: block;
+      opacity: 0.9;
+    }
+
+    .process-name {
+      font-size: 1.2rem;
+      font-family: var(--font-serif);
+      color: var(--color-white);
+      margin-bottom: 10px;
+    }
+
+    .process-text {
+      font-size: 0.88rem;
+      color: var(--color-grey-400);
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       Promotions & Attract Banner (吸引客戶來買飲料)
+       ========================================================================== */
+    .promo-banner {
+      background: linear-gradient(135deg, #2b3038 0%, #1e2227 100%);
+      color: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 50px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--color-charcoal-700);
+      margin-top: -40px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .promo-content h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--color-white);
+    }
+
+    .promo-content p {
+      color: var(--color-grey-300);
+      font-size: 1.05rem;
+      max-width: 600px;
+    }
+
+    .promo-actions {
+      display: flex;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       Customer Reviews / Social Proof
+       ========================================================================== */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .review-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-grey-200);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-stars {
+      display: flex;
+      gap: 4px;
+      color: var(--color-tea-gold);
+      margin-bottom: 14px;
+    }
+
+    .review-quote {
+      font-size: 0.95rem;
+      color: var(--color-charcoal-800);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reviewer-avatar {
+      width: 40px;
+      height: 40px;
+      background: var(--color-grey-200);
+      color: var(--color-charcoal-800);
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
+
+    .reviewer-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--color-charcoal-900);
+    }
+
+    .reviewer-tag {
+      font-size: 0.75rem;
+      color: var(--color-grey-500);
+    }
+
+    /* ==========================================================================
+       Quick Order & Store Info Section
+       ========================================================================== */
+    .order-store-section {
+      background: var(--color-grey-50);
+      border-top: 1px solid var(--color-grey-200);
+    }
+
+    .order-store-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .store-info-box {
+      background: var(--color-white);
+      border: 1px solid var(--color-grey-200);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+
+    .store-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+      color: var(--color-charcoal-900);
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .info-icon {
+      color: var(--color-charcoal-800);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .info-text strong {
+      display: block;
+      color: var(--color-charcoal-900);
+      font-size: 0.95rem;
+    }
+
+    .info-text span {
+      font-size: 0.88rem;
+      color: var(--color-slate-600);
+    }
+
+    /* Interactive Order Form */
+    .order-form-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-grey-200);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-charcoal-800);
+      margin-bottom: 8px;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--color-grey-300);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.925rem;
+      background: var(--color-grey-pure);
+      transition: var(--transition);
+      color: var(--color-charcoal-900);
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--color-charcoal-800);
+      background: var(--color-white);
+      box-shadow: 0 0 0 3px rgba(33, 37, 41, 0.1);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    /* ==========================================================================
+       FAQ Accordion
+       ========================================================================== */
+    .faq-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--color-white);
+      border: 1px solid var(--color-grey-200);
+      border-radius: var(--radius-md);
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-charcoal-900);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .faq-question:hover {
+      background: var(--color-grey-50);
+    }
+
+    .faq-icon {
+      transition: transform 0.3s ease;
+      color: var(--color-grey-500);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      background: var(--color-grey-pure);
+    }
+
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      color: var(--color-slate-600);
+      font-size: 0.925rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+
+    /* ==========================================================================
+       Cart / Order Modal
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(20, 23, 26, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      padding: 32px;
+      animation: modalFadeIn 0.25s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--color-grey-200);
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--color-charcoal-900);
+    }
+
+    .modal-close {
+      font-size: 1.5rem;
+      color: var(--color-grey-500);
+      line-height: 1;
+      padding: 4px;
+    }
+
+    .modal-close:hover {
+      color: var(--color-charcoal-900);
+    }
+
+    .cart-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+      max-height: 280px;
+      overflow-y: auto;
+    }
+
+    .cart-item-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      background: var(--color-grey-50);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-grey-200);
+    }
+
+    .cart-item-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-charcoal-900);
+    }
+
+    .cart-item-price {
+      color: var(--color-charcoal-800);
+      font-weight: 700;
+    }
+
+    .cart-empty-message {
+      text-align: center;
+      padding: 30px 0;
+      color: var(--color-grey-500);
+      font-size: 0.95rem;
+    }
+
+    .cart-summary {
+      border-top: 1px solid var(--color-grey-200);
+      padding-top: 16px;
+      margin-bottom: 24px;
+    }
+
+    .cart-summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: var(--color-slate-600);
+      margin-bottom: 8px;
+    }
+
+    .cart-summary-row.total {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-charcoal-900);
+      font-family: var(--font-serif);
+      border-top: 1px dashed var(--color-grey-300);
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+
+    /* Toast Notification */
+    .toast-msg {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--color-charcoal-900);
+      color: var(--color-white);
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      font-size: 0.925rem;
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(120px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .toast-msg.show {
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       Footer
+       ========================================================================== */
+    .site-footer {
+      background: var(--color-charcoal-900);
+      color: var(--color-grey-400);
+      padding: 70px 0 30px;
+      border-top: 1px solid var(--color-charcoal-700);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand h4 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--color-white);
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--color-grey-400);
+      max-width: 320px;
+      margin-bottom: 18px;
+    }
+
+    .footer-col h5 {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      color: var(--color-white);
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--color-grey-400);
+      font-size: 0.88rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-white);
+      padding-left: 4px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .newsletter-input {
+      background: var(--color-charcoal-800);
+      border: 1px solid var(--color-charcoal-700);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      color: var(--color-white);
+      font-size: 0.85rem;
+      flex-grow: 1;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: var(--color-grey-400);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--color-charcoal-800);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.825rem;
+      color: var(--color-grey-500);
+    }
+
+    /* Back to top */
+    .btn-back-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 44px;
+      height: 44px;
+      background: var(--color-white);
+      color: var(--color-charcoal-800);
+      border: 1px solid var(--color-grey-300);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .btn-back-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .btn-back-top:hover {
+      background: var(--color-charcoal-900);
+      color: var(--color-white);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       Responsive Media Queries
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .order-store-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: var(--color-grey-pure);
+        border-bottom: 1px solid var(--color-grey-200);
+        flex-direction: column;
+        padding: 24px;
+        gap: 16px;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .promo-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 36px 24px;
+      }
+
+      .promo-actions {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-metrics {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部快訊廣播條 -->
+  <div class="announcement-bar">
+    <span>🍃 <strong>新茶季開跑</strong>｜凡加入小歪茶友會員，首次線上預約自取享 <strong>8 折優惠</strong>！</span>
+  </div>
+
+  <!-- 網站頂部導覽列 -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrapper">
+      <a href="#top" class="brand-logo" aria-label="小歪飲料 首頁">
+        <div class="logo-symbol">
+          <!-- 簡約茶葉茶盅符號 SVG -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 8h1a4 4 0 1 1 0 8h-1"></path>
+            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path>
+            <line x1="6" y1="2" x2="6" y2="4"></line>
+            <line x1="10" y1="2" x2="10" y2="4"></line>
+            <line x1="14" y1="2" x2="14" y2="4"></line>
+          </svg>
+        </div>
+        <div>
+          小歪飲料
+          <span class="brand-sub">Xiao Wai Premium Tea</span>
+        </div>
+      </a>
+
+      <!-- 導覽連結 -->
+      <nav class="nav-menu" id="navMenu" aria-label="主要導覽選單">
+        <a href="#about" class="nav-link">品牌理念</a>
+        <a href="#menu" class="nav-link">嚴選茶單</a>
+        <a href="#craft" class="nav-link">製茶工藝</a>
+        <a href="#reviews" class="nav-link">茶友口碑</a>
+        <a href="#store" class="nav-link">門市與線上預約</a>
+      </nav>
+
+      <!-- 導覽功能按鈕 -->
+      <div class="nav-actions">
+        <button class="btn-cart-tray" id="openCartBtn" aria-label="查看點餐單">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>點餐單</span>
+          <span class="cart-counter" id="cartCount">0</span>
+        </button>
+
+        <a href="#store" class="btn-primary" style="display: none;" id="desktopCta">立即品飲</a>
+
+        <!-- 手機漢堡選單按鈕 -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="展開選單">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Hero 形象首屏
+         ========================================================================== -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            100% 台灣高山原葉淬鍊 ‧ 零人工香料
+          </div>
+          <h1 class="hero-title">
+            專為愛喝飲料的你<br>
+            萃一杯<span class="highlight-tea">真正高級</span>的茶
+          </h1>
+          <p class="hero-desc">
+            小歪飲料打破手沖茶與手搖飲的界限。我們搜羅台灣杉林溪、阿里山以及世界頂級茶莊原葉，以精準溫控與低溫冷萃，為每一位手搖愛好者提供回甘、無負擔的純粹飲品。
+          </p>
+          <div class="hero-cta-group">
+            <a href="#menu" class="btn-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              探索熱門茶單
+            </a>
+            <a href="#store" class="btn-outline">
+              門市線上快點
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <strong>12+</strong>
+              <span>精品茶葉產區直供</span>
+            </div>
+            <div class="metric-item">
+              <strong>8 hrs</strong>
+              <span>深層冷萃慢釀時光</span>
+            </div>
+            <div class="metric-item">
+              <strong>4.9 ★</strong>
+              <span>破萬茶友回饋滿意度</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側茶飲意象展示卡 -->
+        <div class="hero-visual">
+          <div class="tea-hero-card">
+            <div class="floating-promo-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              今日主推 ‧ 杉林溪冬摘金萱
+            </div>
+            <div class="tea-hero-art">
+              <!-- 精緻 SVG 茶香與原葉杯具 -->
+              <svg class="floating-cup" width="160" height="160" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                <!-- 蒸騰茶氣 -->
+                <path d="M42 22C42 17 48 15 48 10" stroke="#c5a059" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+                <path d="M52 25C52 19 58 17 58 11" stroke="#ced4da" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+                <path d="M35 26C35 21 39 19 39 14" stroke="#adb5bd" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                <!-- 茶杯與托盤 -->
+                <ellipse cx="50" cy="78" rx="36" ry="7" fill="#14171a" stroke="#495057" stroke-width="2"/>
+                <path d="M26 44L32 74C32.5 76 34.5 78 50 78C65.5 78 67.5 76 68 74L74 44" fill="#2b3038" stroke="#ced4da" stroke-width="2.5"/>
+                <!-- 杯緣光澤 -->
+                <ellipse cx="50" cy="44" rx="24" ry="6" fill="#c5a059" fill-opacity="0.3" stroke="#ced4da" stroke-width="2"/>
+                <!-- 原葉飄落 -->
+                <path d="M48 40C46 44 42 45 42 45C42 45 46 46 48 44C50 42 51 40 48 40Z" fill="#c5a059"/>
+              </svg>
+              <div style="font-family: var(--font-serif); font-size: 1.15rem; color: #f8f9fa; margin-top: 10px; font-weight: 600;">
+                極品現萃 ‧ 澄澈回甘
+              </div>
+              <div style="font-size: 0.75rem; color: #adb5bd; letter-spacing: 0.1em;">
+                SINGLE ORIGIN WHOLE-LEAF BREW
+              </div>
+            </div>
+
+            <div class="tea-spec-row">
+              <div class="tea-spec-box">
+                <small>沖泡水溫</small>
+                <span>88°C 恆溫</span>
+              </div>
+              <div class="tea-spec-box">
+                <small>原葉規格</small>
+                <span>手工揉捻原片</span>
+              </div>
+              <div class="tea-spec-box">
+                <small>香氣特徵</small>
+                <span>天然奶香花韻</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: 品牌理念與堅持 (Brand Philosophy)
+         ========================================================================== -->
+    <section class="section-py" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">OUR PHILOSOPHY</span>
+          <h2 class="section-title">為什麼我們堅持只做高級茶葉飲料？</h2>
+          <p class="section-subtitle">
+            市面上不缺便宜的調味茶精，缺的是一杯喝完嘴裡舒爽生津、不苦不澀的好茶。小歪飲料為所有愛喝飲料的人，打造經得起細品的日常茶席。
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12c0-2.22.72-4.27 1.94-5.93"></path>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">產地契作原葉</h3>
+            <p class="feature-desc">
+              拒絕混充茶角碎末與低成本茶粉。我們親自走訪南投與嘉義高海拔茶園，產地源頭透明化，每季新鮮直送。
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">多段黃金溫控</h3>
+            <p class="feature-desc">
+              綠茶降溫萃、烏龍熱水激發果香、厚奶茶重火深焙。每支茶葉都有量身調校的溫度與時間曲線。
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">潔淨無香精標章</h3>
+            <p class="feature-desc">
+              天然香氣來自茶多酚與焙火陳韻。不添加人工香精、不使用化學果糖，只以純天然蔗糖微調甘甜。
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">手機極速自取</h3>
+            <p class="feature-desc">
+              愛喝飲料不想久候排隊？支援線上點單與自取預約，到店免等待，現萃冰涼立刻帶走。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: 嚴選茶單 (Menu Section - 賣很多飲料)
+         ========================================================================== -->
+    <section class="section-py menu-section" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">CURATED DRINK MENU</span>
+          <h2 class="section-title">小歪嚴選 ‧ 賣很多用心淬鍊的飲料</h2>
+          <p class="section-subtitle">
+            從純粹回甘的高山原茶、濃郁順口的牧場鮮奶茶，到低溫慢萃冷泡茶，滿足每一個挑剔的味蕾。
+          </p>
+        </div>
+
+        <!-- 飲品分類切換標籤 -->
+        <div class="menu-tabs" role="tablist">
+          <button class="tab-btn active" data-category="all">全部茶品</button>
+          <button class="tab-btn" data-category="pure">極品原葉純茶</button>
+          <button class="tab-btn" data-category="milk">牧場厚乳鮮奶茶</button>
+          <button class="tab-btn" data-category="coldbrew">低溫冷萃系列</button>
+          <button class="tab-btn" data-category="seasonal">季節旬果特調</button>
+        </div>
+
+        <!-- 飲品卡片網格 -->
+        <div class="menu-grid" id="menuGrid">
+          
+          <!-- Drink Item 1 -->
+          <article class="drink-card" data-category="pure">
+            <div class="drink-header">
+              <span class="drink-badge special">店長招牌推薦</span>
+              <div class="drink-price">NT$ 65 <small>/ L</small></div>
+            </div>
+            <h3 class="drink-name">杉林溪冬摘金萱</h3>
+            <div class="drink-subname">SHANLINXI JINXUAN OOLONG</div>
+            <p class="drink-desc">
+              海拔 1,600 公尺原葉手採。沖泡初段散發淡雅高雅奶香，尾韻浮現甘冽清泉甜感，無糖即可生津止渴。
+            </p>
+            <div class="drink-flavor-tags">
+              <span class="flavor-tag">天然奶香</span>
+              <span class="flavor-tag">高山清韻</span>
+              <span class="flavor-tag">無糖首選</span>
+            </div>
+            <div class="drink-card-footer">
+              <span class="sugar-ice-tip">建議：無糖 ‧ 微冰</span>
+              <button class="btn-add-drink" onclick="addToCart('杉林溪冬摘金萱', 65)">
+                + 加入點單
+              </button>
+            </div>
+          </article>
+
+          <!-- Drink Item 2 -->
+          <article class="drink-card" data-category="pure">
+            <div class="drink-header">
+              <span class="drink-badge">經典回甘</span>
+              <div class="drink-price">NT$ 60 <small>/ L</small></div>
+            </div>
+            <h3 class="drink-name">碳焙鐵觀音</h3>
+            <div class="drink-subname">TRADITIONAL ROASTED TI-KUAN-YIN</div>
+            <p class="drink-desc">
+              木炭文火長時間慢焙，茶湯呈剔透琥珀色。初入喉濃烈厚實，杯底留有沈穩弱果酸與熟果蜜香。
+            </p>
+            <div class="drink-flavor-tags">
+              <span class="flavor-tag">重焙火香</span>
+              <span class="flavor-tag">熟果蜜香</span>
+              <span class="flavor-tag">茶感醇厚</span>
+            </div>
+            <div class="drink-card-footer">
+              <span class="sugar-ice-tip">建議：一分糖 ‧ 冰</span>
+              <button class="btn-add-drink" onclick="addToCart('碳焙鐵觀音', 60)">
+                + 加入點單
+              </button>
+            </div>
+          </article>
+
+          <!-- Drink Item 3 -->
+          <article class="drink-card" data-category="milk">
+            <div class="drink-header">
+              <span class="drink-badge special">人氣冠軍</span>
+              <div class="drink-price">NT$ 85 <small>/ L</small></div>
+            </div>
+            <h3 class="drink-name">小歪極濃紅玉厚奶</h3>
+            <div class="drink-subname">RUBY BLACK TEA WITH FRESH MILK</div>
+            <p class="drink-desc">
+              日月潭台茶 18 號紅玉紅茶，具獨特肉桂與薄荷清香。融合小農產地低溫殺菌特級生乳，絲滑濃郁不甜膩。
+            </p>
+            <div class="drink-flavor-tags">
+              <span class="flavor-tag">台茶18號</span>
+              <span class="flavor-tag">100%鮮奶</span>
+              <span class="flavor-tag">絲滑不膩</span>
+            </div>
+            <div class="drink-card-footer">
+              <span class="sugar-ice-tip">建議：微糖 ‧ 去冰</span>
+              <button class="btn-add-drink" onclick="addToCart('小歪極濃紅玉厚奶', 85)">
+                + 加入點單
+              </button>
+            </div>
+          </article>
+
+          <!-- Drink Item 4 -->
+          <article class="drink-card" data-category="milk">
+            <div class="drink-header">
+              <span class="drink-badge">茶韻濃郁</span>
+              <div class="drink-price">NT$ 80 <small>/ L</small></div>
+            </div>
+            <h3 class="drink-name">重焙鐵觀音歐蕾</h3>
+            <div class="drink-subname">TI-KUAN-YIN TEA LATTE</div>
+            <p class="drink-desc">
+              將鐵觀音傳統炭焙香氣完美融入鮮乳，茶香壓得住奶味，入口溫潤回甘，是濃茶派愛好者每日必喝之選。
+            </p>
+            <div class="drink-flavor-tags">
+              <span class="flavor-tag">焙火甘甜</span>
+              <span class="flavor-tag">茶奶平衡</span>
+              <span class="flavor-tag">香氣持久</span>
+            </div>
+            <div class="drink-card-footer">
+              <span class="sugar-ice-tip">建議：半糖 ‧ 微冰</span>
+              <button class="btn-add-drink" onclick="addToCart('重焙鐵觀音歐蕾', 80)">
+                + 加入點單
+              </button>
+            </div>
+          </article>
+
+          <!-- Drink Item 5 -->
+          <article class="drink-card" data-category="coldbrew">
+            <div class="drink-header">
+              <span class="drink-badge special">每日限量</span>
+              <div class="drink-price">NT$ 90 <small>/ 瓶裝</small></div>
+            </div>
+            <h3 class="drink-name">冷萃阿里山高冷烏龍</h3>
+            <div class="drink-subname">COLD BREW ALISHAN HIGH-MOUNTAIN</div>
+            <p class="drink-desc">
+              採用食品級冷萃瓶，4°C 低溫慢速浸泡 8 小時，萃出兒茶素與甘甜氨基酸，幾無單寧苦澀，清涼沁脾。
+            </p>
+            <div class="drink-flavor-tags">
+              <span class="flavor-tag">8小時慢萃</span>
+              <span class="flavor-tag">無澀回甘</span>
+              <span class="flavor-tag">專屬透明瓶</span>
+            </div>
+            <div class="drink-card-footer">
+              <span class="sugar-ice-tip">規格：無糖 ‧ 冰鎮瓶裝</span>
+              <button class="btn-add-drink" onclick="addToCart('冷萃阿里山高冷烏龍', 90)">
+                + 加入點單
+              </button>
+            </div>
+          </article>
+
+          <!-- Drink Item 6 -->
+          <article class="drink-card" data-category="seasonal">
+            <div class="drink-header">
+              <span class="drink-badge">當令限定</span>
+              <div class="drink-price">NT$ 85 <small>/ L</small></div>
+            </div>
+            <h3 class="drink-name">紅心芭樂青心烏龍</h3>
+            <div class="drink-subname">GUAVA FRESH OOLONG TEA</div>
+            <p class="drink-desc">
+              嚴選宜蘭在地紅心芭樂鮮榨果泥，搭配輕焙火青心烏龍茶湯。果香與茶香交織，酸甜順口、生津止渴。
+            </p>
+            <div class="drink-flavor-tags">
+              <span class="flavor-tag">鮮採鮮榨</span>
+              <span class="flavor-tag">花果青韻</span>
+              <span class="flavor-tag">消暑必備</span>
+            </div>
+            <div class="drink-card-footer">
+              <span class="sugar-ice-tip">建議：微糖 ‧ 微冰</span>
+              <button class="btn-add-drink" onclick="addToCart('紅心芭樂青心烏龍', 85)">
+                + 加入點單
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: 製茶工藝 (Craftsmanship)
+         ========================================================================== */
+    -->
+    <section class="section-py process-section" id="craft">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">TEA CRAFTSMANSHIP</span>
+          <h2 class="section-title">從一葉嫩芽到一杯澄澈茶湯</h2>
+          <p class="section-subtitle">
+            小歪飲料不妥協的工藝堅持，只為讓你在匆忙步伐中，喝到媲美功夫茶席的尊榮品質。
+          </p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <span class="process-num">01</span>
+            <h3 class="process-name">高山採摘 ‧ 一心二葉</h3>
+            <p class="process-text">
+              清晨雲霧繚繞時人工採摘，確保茶葉飽含充足水分與養分，保留高海拔冷冽山頭氣。
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-num">02</span>
+            <h3 class="process-name">日光萎凋 ‧ 靜置發酵</h3>
+            <p class="process-text">
+              透過製茶師傅翻動與靜置，水分緩慢消散，逐步激發茶葉天然花果清香與醇厚甜度。
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-num">03</span>
+            <h3 class="process-name">文火烘焙 ‧ 鎖住茶韻</h3>
+            <p class="process-text">
+              以專業焙茶機進行分段恆溫焙火，除去雜味與青澀，封存原片茶葉最佳黃金賞味期。
+            </p>
+          </div>
+
+          <div class="process-step">
+            <span class="process-num">04</span>
+            <h3 class="process-name">原葉現萃 ‧ 澄澈入杯</h3>
+            <p class="process-text">
+              店內嚴選多段變壓式茶咖機與手工壺萃，每杯依照茶種精算秒數，出杯保證滴滴清香。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Banner: 吸引顧客促銷區 (Special Member Promo)
+         ========================================================================== -->
+    <div class="container">
+      <div class="promo-banner">
+        <div class="promo-content">
+          <h3>辦公室下午茶外送 ‧ 滿 5 杯免運送達</h3>
+          <p>
+            上班心累想來杯好茶？小歪飲料支援公司行號大量團購外送，每杯飲品均標註甜度冰塊與客製化標籤，更享滿千九折專屬禮遇。
+          </p>
+        </div>
+        <div class="promo-actions">
+          <a href="#store" class="btn-primary" style="background: var(--color-tea-gold); color: #14171a;">立即線上預訂</a>
+          <button class="btn-outline" style="color: #ffffff; border-color: #ced4da;" onclick="alert('歡迎致電訂購專線：(02) 2345-6789，專人為您服務！')">電話洽詢</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         Section: 茶友口碑好評 (Social Proof / Reviews)
+         ========================================================================== -->
+    <section class="section-py" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">CUSTOMER REVIEWS</span>
+          <h2 class="section-title">喝過就回不去的茶友心聲</h2>
+          <p class="section-subtitle">
+            Google 評論破 2,000 則好評，平均 4.9 星，感謝每一位對茶品質堅持的你。
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-stars">
+              ★★★★★
+            </div>
+            <p class="review-quote">
+              「平時喝手搖都容易心悸胃不舒服，自從小歪開在公司樓下後天天喝！冬摘金萱無糖真的甘甜到不可思議，完全是高級茶行的手沖水準。」
+            </p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">林</div>
+              <div>
+                <div class="reviewer-name">林小姐</div>
+                <div class="reviewer-tag">信義區金融業 ‧ 資深茶飲控</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              ★★★★★
+            </div>
+            <p class="review-quote">
+              「厚奶茶愛好者強烈推薦紅玉厚奶！茶味極濃郁，肉桂清香搭牧場生乳比例抓得太完美了，完全不是化學奶精能比拟的高級質感。」
+            </p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">張</div>
+              <div>
+                <div class="reviewer-name">張先生</div>
+                <div class="reviewer-tag">設計工作室總監 ‧ 每日兩杯</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              ★★★★★
+            </div>
+            <p class="review-quote">
+              「冷萃高冷烏龍瓶裝超有質感，帶去開會大家都問哪裡買的。喝完嘴巴很乾淨、生津解膩，包裝配色灰色調很有高級感！」
+            </p>
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">陳</div>
+              <div>
+                <div class="reviewer-name">陳小姐</div>
+                <div class="reviewer-tag">自由接案插畫師</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: 門市資訊與線上快點表單 (Store & Online Order)
+         ========================================================================== -->
+    <section class="section-py order-store-section" id="store">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">ORDER & STORE</span>
+          <h2 class="section-title">門市資訊與線上快速預約</h2>
+          <p class="section-subtitle">
+            填寫下方表單立即預先點單，現場到店免排隊直接取杯！
+          </p>
+        </div>
+
+        <div class="order-store-grid">
+          <!-- 門市資訊卡片 -->
+          <div class="store-info-box">
+            <h3 class="store-title">小歪飲料 旗艦門市</h3>
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <strong>門市地址</strong>
+                  <span>台北市信義區茶香大道 88 號 1 樓（捷運站 3 號出口步行 2 分鐘）</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <strong>營業時間</strong>
+                  <span>週一至週日 10:00 – 21:30（原葉現萃，全日供茶）</span>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="info-text">
+                  <strong>外送與訂購專線</strong>
+                  <span>(02) 2345-6789 / 0988-115-103</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="background: var(--color-grey-100); padding: 18px; border-radius: var(--radius-sm); border: 1px dashed var(--color-grey-300);">
+              <span style="font-weight: 700; color: var(--color-charcoal-900); display: block; margin-bottom: 4px;">🌿 友善環保提倡</span>
+              <span style="font-size: 0.85rem; color: var(--color-slate-600);">自備環保隨行杯，現場每杯現折 <strong>NT$ 5 元</strong>，共同為地球永續出一份心力。</span>
+            </div>
+          </div>
+
+          <!-- 線上快取預約表單 -->
+          <div class="order-form-card">
+            <h3 style="font-family: var(--font-serif); font-size: 1.45rem; margin-bottom: 18px; color: var(--color-charcoal-900);">
+              線上預約取餐 ‧ 免排隊
+            </h3>
+            <form id="quickOrderForm" onsubmit="handleOrderSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="customerName">訂購人姓名 *</label>
+                  <input type="text" id="customerName" class="form-input" placeholder="例如：吳先生" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="customerPhone">手機號碼 *</label>
+                  <input type="tel" id="customerPhone" class="form-input" placeholder="例如：0912-345-678" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="drinkSelect">想喝的茶飲 *</label>
+                  <select id="drinkSelect" class="form-select" required>
+                    <option value="">請選擇飲品...</option>
+                    <option value="杉林溪冬摘金萱 (NT$ 65)">杉林溪冬摘金萱 (NT$ 65)</option>
+                    <option value="碳焙鐵觀音 (NT$ 60)">碳焙鐵觀音 (NT$ 60)</option>
+                    <option value="小歪極濃紅玉厚奶 (NT$ 85)">小歪極濃紅玉厚奶 (NT$ 85)</option>
+                    <option value="重焙鐵觀音歐蕾 (NT$ 80)">重焙鐵觀音歐蕾 (NT$ 80)</option>
+                    <option value="冷萃阿里山高冷烏龍 (NT$ 90)">冷萃阿里山高冷烏龍 (NT$ 90)</option>
+                    <option value="紅心芭樂青心烏龍 (NT$ 85)">紅心芭樂青心烏龍 (NT$ 85)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="drinkQuantity">杯數 *</label>
+                  <select id="drinkQuantity" class="form-select">
+                    <option value="1">1 杯</option>
+                    <option value="2">2 杯</option>
+                    <option value="3">3 杯</option>
+                    <option value="5">5 杯（享免運外送優惠）</option>
+                    <option value="10">10 杯以上（專人確認）</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="sugarPreference">甜度調整</label>
+                  <select id="sugarPreference" class="form-select">
+                    <option value="無糖 (推薦)">無糖 (原茶推薦)</option>
+                    <option value="一分糖 (微甜)">一分糖 (微甜)</option>
+                    <option value="微糖 (三分糖)">微糖 (三分糖)</option>
+                    <option value="半糖 (五分糖)">半糖 (五分糖)</option>
+                    <option value="標準甜">標準甜</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="icePreference">冰塊調整</label>
+                  <select id="icePreference" class="form-select">
+                    <option value="微冰 (推薦)">微冰 (推薦)</option>
+                    <option value="去冰">去冰</option>
+                    <option value="完全去冰 (小碎冰)">完全去冰</option>
+                    <option value="正常冰">正常冰</option>
+                    <option value="溫熱 (原葉溫茶)">溫熱飲</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pickupTime">預計取茶時間</label>
+                <input type="text" id="pickupTime" class="form-input" placeholder="例如：20分鐘後到店自取 / 下午 15:30 外送">
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem;">
+                立即送出預約取餐單
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Section: 常見問答 (FAQ)
+         ========================================================================== -->
+    <section class="section-py">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">FREQUENTLY ASKED QUESTIONS</span>
+          <h2 class="section-title">顧客常問的茶飲小知識</h2>
+        </div>
+
+        <div class="faq-wrapper">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>喝你們的茶會睡不著或容易心悸嗎？</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                小歪飲料堅持採用純淨高山原片茶葉，非混充低劣茶粉或茶精，低咖啡因且富含茶胺酸與天然茶多酚，品飲體驗清爽回甘，不易造成負擔。若對咖啡因特別敏感，推薦可選擇低溫慢速冷萃或熟焙鐵觀音系列。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>原茶推薦喝無糖嗎？會不會苦澀？</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                強烈推薦品嚐無糖！高品質的手採茶葉本身含有豐富甘甜物質，我們透過專業水溫精準釋放甘味，入口順滑生津，完全不苦不澀，喝完喉頭還會自然回甘。
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>提供公司行號下午茶外送嗎？需要提早多久預訂？</span>
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                有的！市區訂購滿 5 杯即可免運外送。如需 20 杯以上的大量團體訂單，建議提前 1 至 2 小時透過線上表單或電話致電告知，我們將由專屬萃茶師為您準時現萃直送。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       購物點餐單 Modal (Cart Drawer / Order Tray)
+       ========================================================================== -->
+  <div class="modal-overlay" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 class="modal-title" id="cartTitle">您的專屬點餐單</h3>
+        <button class="modal-close" id="closeCartBtn" aria-label="關閉點餐單">&times;</button>
+      </div>
+
+      <div class="cart-items-list" id="cartItemsList">
+        <div class="cart-empty-message">目前尚未加入任何飲品，快去挑選喜歡的好茶吧！</div>
+      </div>
+
+      <div class="cart-summary">
+        <div class="cart-summary-row">
+          <span>飲品總杯數</span>
+          <span id="summaryCupCount">0 杯</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>會員專屬折抵</span>
+          <span style="color: #2b8a3e;">- NT$ 0</span>
+        </div>
+        <div class="cart-summary-row total">
+          <span>結帳總計</span>
+          <span id="summaryTotal">NT$ 0</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px;">
+        <button class="btn-outline" style="flex: 1; justify-content: center;" onclick="clearCart()">清空重選</button>
+        <button class="btn-primary" style="flex: 2; justify-content: center;" onclick="checkoutCart()">確認送出點單</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 提示浮動通知 (Toast) -->
+  <div class="toast-msg" id="toastMessage">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#51cf66" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastText">已成功加入點餐清單！</span>
+  </div>
+
+  <!-- 返回頂部按鈕 -->
+  <button class="btn-back-top" id="backToTop" aria-label="返回頁首">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- ==========================================================================
+       頁尾 Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>小歪飲料 XIAO WAI TEA</h4>
+          <p>
+            專為喜歡喝飲料的人，打造兼具高級茶葉工藝與純粹回甘的極致日常茶飲。原葉手採、精準溫控、天然零添加。
+          </p>
+          <div style="font-size: 0.825rem; color: var(--color-grey-500);">
+            營業時間：10:00 - 21:30 全年無休
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>探索茶品</h5>
+          <div class="footer-links">
+            <a href="#menu">杉林溪冬摘金萱</a>
+            <a href="#menu">碳焙鐵觀音</a>
+            <a href="#menu">小歪極濃紅玉厚奶</a>
+            <a href="#menu">阿里山低溫冷萃</a>
+            <a href="#menu">旬果季節限定款</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>快速連結</h5>
+          <div class="footer-links">
+            <a href="#about">品牌工藝理念</a>
+            <a href="#craft">製茶四大工序</a>
+            <a href="#store">門市線上自取預約</a>
+            <a href="#reviews">茶友真實口碑</a>
+            <a href="#top">返回頁面頂端</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>訂閱茶季手札</h5>
+          <p style="font-size: 0.85rem; color: var(--color-grey-400); margin-bottom: 10px;">
+            第一時間獲取限量高山冬茶與當季特調優惠情報。
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('感謝訂閱！茶季優惠代碼已寄至您的信箱。');">
+            <input type="email" class="newsletter-input" placeholder="請輸入您的 Email" required>
+            <button type="submit" class="btn-primary" style="padding: 9px 14px; font-size: 0.85rem; background: var(--color-tea-gold); color: #14171a;">
+              訂閱
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 小歪飲料 XIAO WAI BEVERAGE. ALL RIGHTS RESERVED.
+        </div>
+        <div>
+          網頁規格驅動開發作業 ‧ 學號：11515103
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       互動 JavaScript
+       ========================================================================== -->
+  <script>
+    // 購物車數據狀態
+    let cart = [];
+
+    // DOM 元素
+    const cartCountEl = document.getElementById('cartCount');
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartModal = document.getElementById('cartModal');
+    const cartItemsList = document.getElementById('cartItemsList');
+    const summaryCupCount = document.getElementById('summaryCupCount');
+    const summaryTotal = document.getElementById('summaryTotal');
+    const toast = document.getElementById('toastMessage');
+    const toastText = document.getElementById('toastText');
+    const backToTopBtn = document.getElementById('backToTop');
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    // 行動版漢堡選單切換
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // 點擊選單連結自動關閉手機選單
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+
+    // 加入購物車
+    function addToCart(name, price) {
+      cart.push({ name, price, id: Date.now() + Math.random() });
+      updateCartUI();
+      showToast(`已將「${name}」加入點單！`);
+    }
+
+    // 更新點餐單介面
+    function updateCartUI() {
+      cartCountEl.textContent = cart.length;
+      summaryCupCount.textContent = `${cart.length} 杯`;
+
+      if (cart.length === 0) {
+        cartItemsList.innerHTML = '<div class="cart-empty-message">目前尚未加入任何飲品，快去挑選喜歡的好茶吧！</div>';
+        summaryTotal.textContent = 'NT$ 0';
+      } else {
+        let total = 0;
+        cartItemsList.innerHTML = cart.map((item, index) => {
+          total += item.price;
+          return `
+            <div class="cart-item-row">
+              <div>
+                <div class="cart-item-name">${item.name}</div>
+                <small style="color: #6c757d;">現萃大杯 (L) / 標準調配</small>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span class="cart-item-price">NT$ ${item.price}</span>
+                <button onclick="removeFromCart(${index})" style="color: #dc3545; font-size: 0.85rem;" title="移除此品項">✕</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+        summaryTotal.textContent = `NT$ ${total}`;
+      }
+    }
+
+    // 移除單一品項
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+      showToast('已從點單中移除品項');
+    }
+
+    // 清空購物車
+    function clearCart() {
+      if (cart.length === 0) return;
+      if (confirm('確定要清空目前所有點餐品項嗎？')) {
+        cart = [];
+        updateCartUI();
+        showToast('已清空點餐單');
+      }
+    }
+
+    // 結帳送出
+    function checkoutCart() {
+      if (cart.length === 0) {
+        alert('您的點餐單目前是空的，請先挑選茶飲！');
+        return;
+      }
+      alert(`🎉 感謝您的點單！\n總共 ${cart.length} 杯飲品已送達店內茶師現萃。\n請於 15 分鐘後憑訂單編號「XW-${Math.floor(1000 + Math.random() * 9000)}」至門市取茶！`);
+      cart = [];
+      updateCartUI();
+      cartModal.classList.remove('active');
+    }
+
+    // 開關點餐彈窗
+    openCartBtn.addEventListener('click', () => cartModal.classList.add('active'));
+    closeCartBtn.addEventListener('click', () => cartModal.classList.remove('active'));
+    cartModal.addEventListener('click', (e) => {
+      if (e.target === cartModal) cartModal.classList.remove('active');
+    });
+
+    // 彈出 Toast 訊息
+    function showToast(msg) {
+      toastText.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    // 飲品分類 Tab 過濾功能
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const drinkCards = document.querySelectorAll('.drink-card');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+        drinkCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 表單送出處理
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('customerName').value;
+      const drink = document.getElementById('drinkSelect').value;
+      const qty = document.getElementById('drinkQuantity').value;
+      const sugar = document.getElementById('sugarPreference').value;
+      const ice = document.getElementById('icePreference').value;
+
+      showToast(`預約成功！已收到 ${name} 的 ${qty} 杯 ${drink} 訂單。`);
+      alert(`【小歪飲料 預約成功確認】\n\n感謝 ${name} 的預約！\n飲品：${drink}\n杯數：${qty} 杯\n調配：${sugar} / ${ice}\n門市已開始為您預先萃取，歡迎隨時前往取餐！`);
+      document.getElementById('quickOrderForm').reset();
+    }
+
+    // FAQ Accordion 展開收合
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // 關閉其他展開項
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // 返回頂端按鈕監聽
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
+
