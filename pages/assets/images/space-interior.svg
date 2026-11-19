@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="interiorBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f2f2f2"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" rx="10" fill="url(#interiorBg)" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Wall line / Perspective room lines -->
+  <line x1="80" y1="0" x2="80" y2="400" stroke="#eaeaea" stroke-width="1.5"/>
+  <line x1="80" y1="300" x2="600" y2="300" stroke="#cccccc" stroke-width="2"/>
+  
+  <!-- Floor perspective tiles -->
+  <line x1="80" y1="300" x2="0" y2="400" stroke="#dddddd" stroke-width="1.5"/>
+  <line x1="200" y1="300" x2="160" y2="400" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="330" y1="300" x2="310" y2="400" stroke="#e0e0e0" stroke-width="1"/>
+  <line x1="460" y1="300" x2="470" y2="400" stroke="#e0e0e0" stroke-width="1"/>
+
+  <!-- Large Floor-to-Ceiling Window (Center Left) -->
+  <rect x="120" y="50" width="190" height="250" fill="#fafafa" stroke="#333333" stroke-width="3"/>
+  <line x1="215" y1="50" x2="215" y2="300" stroke="#333333" stroke-width="2"/>
+  <line x1="120" y1="170" x2="310" y2="170" stroke="#333333" stroke-width="1.5"/>
+  <!-- Sunlight diagonal beam -->
+  <polygon points="125,50 305,50 480,380 230,380" fill="#000000" opacity="0.03"/>
+
+  <!-- Minimalist Pendant Lamp -->
+  <line x1="440" y1="0" x2="440" y2="120" stroke="#111111" stroke-width="2"/>
+  <path d="M415,145 L465,145 L445,120 L435,120 Z" fill="#222222"/>
+  <circle cx="440" cy="150" r="5" fill="#f8d57e" opacity="0.8"/>
+
+  <!-- Table and Chairs in Cafe -->
+  <!-- Table 1 (near window) -->
+  <ellipse cx="215" cy="285" rx="42" ry="10" fill="#e0e0e0" stroke="#222222" stroke-width="2"/>
+  <line x1="215" y1="290" x2="215" y2="335" stroke="#222222" stroke-width="3"/>
+  <line x1="195" y1="335" x2="235" y2="335" stroke="#222222" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Modern Chair left of Table 1 -->
+  <path d="M155,275 C155,255 170,255 170,275 L170,305" fill="none" stroke="#333333" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="150" y1="285" x2="175" y2="285" stroke="#333333" stroke-width="2.5"/>
+  <line x1="153" y1="285" x2="148" y2="335" stroke="#333333" stroke-width="2"/>
+  <line x1="172" y1="285" x2="177" y2="335" stroke="#333333" stroke-width="2"/>
+
+  <!-- Modern Chair right of Table 1 -->
+  <path d="M260,275 C260,255 275,255 275,275 L275,305" fill="none" stroke="#333333" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="255" y1="285" x2="280" y2="285" stroke="#333333" stroke-width="2.5"/>
+  <line x1="258" y1="285" x2="253" y2="335" stroke="#333333" stroke-width="2"/>
+  <line x1="277" y1="285" x2="282" y2="335" stroke="#333333" stroke-width="2"/>
+
+  <!-- Minimalist Botanical Plant Pot (Right corner) -->
+  <path d="M500,295 L530,295 L525,350 L505,350 Z" fill="#222222"/>
+  <!-- Tall plant stems & leaves -->
+  <path d="M515,295 Q515,220 540,180" fill="none" stroke="#444444" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M515,295 Q500,230 480,200" fill="none" stroke="#444444" stroke-width="2" stroke-linecap="round"/>
+  <path d="M515,295 Q512,210 510,165" fill="none" stroke="#444444" stroke-width="2" stroke-linecap="round"/>
+  <!-- Leaf shapes -->
+  <ellipse cx="540" cy="180" rx="14" ry="7" transform="rotate(-30 540 180)" fill="#333333"/>
+  <ellipse cx="480" cy="200" rx="12" ry="6" transform="rotate(30 480 200)" fill="#333333"/>
+  <ellipse cx="510" cy="165" rx="12" ry="6" transform="rotate(-75 510 165)" fill="#333333"/>
+
+  <!-- Caption text -->
+  <text x="300" y="380" fill="#555555" font-size="14" font-family="'Noto Sans TC', sans-serif" font-weight="500" text-anchor="middle" letter-spacing="3">留白與自然採光的沉靜空間</text>
+</svg>

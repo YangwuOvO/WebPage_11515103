@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="storyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#242424"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" rx="10" fill="url(#storyBg)"/>
+  
+  <!-- Subtle circular grid -->
+  <circle cx="300" cy="200" r="170" fill="none" stroke="#333333" stroke-width="1.5" stroke-dasharray="6,6"/>
+  <circle cx="300" cy="200" r="120" fill="none" stroke="#2a2a2a" stroke-width="1"/>
+
+  <!-- Dripper Stand & Server -->
+  <!-- Coffee Server (Glass Pot) -->
+  <path d="M260,280 L250,330 C250,340 350,340 350,330 L340,280 Z" fill="#2a2a2a" stroke="#888888" stroke-width="2"/>
+  <ellipse cx="300" cy="280" rx="40" ry="8" fill="#1c1c1c" stroke="#888888" stroke-width="2"/>
+  <!-- Liquid inside pot -->
+  <path d="M255,305 L252,328 C252,336 348,336 348,328 L345,305 C330,312 270,312 255,305 Z" fill="#111111" stroke="#3d2c1e" stroke-width="1"/>
+
+  <!-- Server Handle -->
+  <path d="M345,285 C370,285 375,325 348,325" fill="none" stroke="#888888" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Dripper (V60 style) -->
+  <polygon points="255,190 345,190 315,260 285,260" fill="#f0f0f0" stroke="#ffffff" stroke-width="2"/>
+  <line x1="285" y1="260" x2="315" y2="260" stroke="#ffffff" stroke-width="4"/>
+  <!-- Filter paper cone -->
+  <polygon points="260,190 340,190 310,250 290,250" fill="#ffffff"/>
+  <polygon points="268,198 332,198 308,245 292,245" fill="#38291f"/>
+
+  <!-- Pouring Kettle Spout & Water stream -->
+  <path d="M190,140 Q215,130 260,165" fill="none" stroke="#cccccc" stroke-width="5" stroke-linecap="round"/>
+  <!-- Thin water stream -->
+  <path d="M260,165 Q275,175 300,215" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-dasharray="2,1"/>
+
+  <!-- Coffee Drips -->
+  <circle cx="300" cy="270" r="2.5" fill="#ffffff"/>
+  <circle cx="300" cy="285" r="2" fill="#ffffff"/>
+
+  <!-- Rising aroma/steam -->
+  <path d="M285,160 Q275,130 285,100" fill="none" stroke="#777777" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <path d="M305,155 Q320,125 310,95" fill="none" stroke="#999999" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- Caption -->
+  <text x="300" y="375" fill="#dddddd" font-size="15" font-family="'Noto Sans TC', sans-serif" font-weight="500" text-anchor="middle" letter-spacing="3">手工慢萃 · 回歸初心</text>
+</svg>
