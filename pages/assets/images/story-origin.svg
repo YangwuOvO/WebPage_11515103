@@ -17,7 +17,7 @@
   <path d="M260,280 L250,330 C250,340 350,340 350,330 L340,280 Z" fill="#2a2a2a" stroke="#888888" stroke-width="2"/>
   <ellipse cx="300" cy="280" rx="40" ry="8" fill="#1c1c1c" stroke="#888888" stroke-width="2"/>
   <!-- Liquid inside pot -->
-  <path d="M255,305 L252,328 C252,336 348,336 348,328 L345,305 C330,312 270,312 255,305 Z" fill="#111111" stroke="#3d2c1e" stroke-width="1"/>
+  <path d="M255,305 L252,328 C252,336 348,336 348,328 L345,305 C330,312 270,312 255,305 Z" fill="#111111" stroke="#4a2c6b" stroke-width="1"/>
 
   <!-- Server Handle -->
   <path d="M345,285 C370,285 375,325 348,325" fill="none" stroke="#888888" stroke-width="4" stroke-linecap="round"/>
@@ -27,7 +27,7 @@
   <line x1="285" y1="260" x2="315" y2="260" stroke="#ffffff" stroke-width="4"/>
   <!-- Filter paper cone -->
   <polygon points="260,190 340,190 310,250 290,250" fill="#ffffff"/>
-  <polygon points="268,198 332,198 308,245 292,245" fill="#38291f"/>
+  <polygon points="268,198 332,198 308,245 292,245" fill="#3b2256"/>
 
   <!-- Pouring Kettle Spout & Water stream -->
   <path d="M190,140 Q215,130 260,165" fill="none" stroke="#cccccc" stroke-width="5" stroke-linecap="round"/>

@@ -1,27 +1,28 @@
 /* ==========================================================================
    小歪飲料 - 網站共用樣式表 (site.css)
-   風格定位：黑白、自然、簡潔
+   風格定位：深紫、自然、簡潔
    適用頁面：index.html, about.html, contact.html
    ========================================================================== */
 
 /* 1. CSS 變數設定 */
 :root {
-  --color-black: #111111;
-  --color-dark: #222222;
-  --color-gray-dark: #4a4a4a;
-  --color-gray: #717171;
-  --color-gray-light: #e8e8e8;
-  --color-bg-light: #fbfbfb;
-  --color-bg-subtle: #f5f5f7;
+  --color-primary: #4a2c6b;
+  --color-primary-hover: #613c8a;
+  --color-dark: #241e2c;
+  --color-gray-dark: #4f4859;
+  --color-gray: #756d80;
+  --color-gray-light: #ebe6f2;
+  --color-bg-light: #faf8fc;
+  --color-bg-subtle: #f3eff8;
   --color-white: #ffffff;
-  --color-border: #e0e0e0;
+  --color-border: #e3dceb;
   
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
   --header-height: 72px;
   --max-width: 1100px;
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --border-radius: 8px;
-  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --box-shadow: 0 4px 20px rgba(74, 44, 107, 0.08);
 }
 
 /* 2. 基本重設與排版 */
@@ -32,7 +33,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 20px;
   scroll-behavior: smooth;
 }
 
@@ -40,8 +41,8 @@ body {
   font-family: var(--font-family);
   background-color: var(--color-white);
   color: var(--color-dark);
-  line-height: 1.75;
-  letter-spacing: 0.02em;
+  line-height: 2;
+  letter-spacing: 0.03em;
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
@@ -105,7 +106,7 @@ ul, ol {
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--color-black);
+  color: var(--color-primary);
   letter-spacing: 0.04em;
   margin-bottom: 16px;
   line-height: 1.35;
@@ -142,26 +143,26 @@ ul, ol {
 }
 
 .btn-primary {
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   color: var(--color-white);
-  border-color: var(--color-black);
+  border-color: var(--color-primary);
 }
 
 .btn-primary:hover {
-  background-color: #333333;
-  border-color: #333333;
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(74, 44, 107, 0.22);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--color-black);
-  border-color: var(--color-black);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .btn-outline:hover {
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   color: var(--color-white);
   transform: translateY(-2px);
 }
@@ -178,7 +179,7 @@ ul, ol {
 }
 
 .card:hover {
-  border-color: var(--color-black);
+  border-color: var(--color-primary);
   transform: translateY(-4px);
   box-shadow: var(--box-shadow);
 }
@@ -214,7 +215,7 @@ ul, ol {
 .card-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--color-primary);
   margin-bottom: 12px;
 }
 
@@ -261,7 +262,7 @@ ul, ol {
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--color-black);
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -286,12 +287,12 @@ ul, ol {
 }
 
 .nav-link:hover {
-  color: var(--color-black);
+  color: var(--color-primary);
 }
 
 /* 目前所在頁面高亮 */
 .nav-link.active {
-  color: var(--color-black);
+  color: var(--color-primary);
   font-weight: 700;
 }
 
@@ -302,7 +303,7 @@ ul, ol {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
 }
 
 /* 手機版漢堡選單按鈕 */
@@ -312,7 +313,7 @@ ul, ol {
   border: none;
   padding: 8px;
   cursor: pointer;
-  color: var(--color-black);
+  color: var(--color-primary);
   width: 44px;
   height: 44px;
   position: relative;
@@ -325,7 +326,7 @@ ul, ol {
   display: block;
   width: 22px;
   height: 2px;
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   position: relative;
   transition: var(--transition);
 }
@@ -336,7 +337,7 @@ ul, ol {
   display: block;
   width: 22px;
   height: 2px;
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   position: absolute;
   left: 0;
   transition: var(--transition);
@@ -376,7 +377,7 @@ ul, ol {
 .page-banner-title {
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--color-black);
+  color: var(--color-primary);
   margin-bottom: 12px;
   letter-spacing: 0.04em;
 }
@@ -404,7 +405,7 @@ ul, ol {
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: 0.03em;
-  color: var(--color-black);
+  color: var(--color-primary);
   margin-bottom: 20px;
 }
 
@@ -418,7 +419,7 @@ ul, ol {
 .hero-visual {
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px rgba(74, 44, 107, 0.1);
   border: 1px solid var(--color-border);
 }
 
@@ -455,7 +456,7 @@ ul, ol {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: var(--color-black);
+  color: var(--color-primary);
 }
 
 .story-text p {
@@ -482,10 +483,10 @@ ul, ol {
 .value-number {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-black);
+  color: var(--color-primary);
   display: block;
   margin-bottom: 12px;
-  border-bottom: 2px solid var(--color-black);
+  border-bottom: 2px solid var(--color-primary);
   width: 32px;
   padding-bottom: 4px;
 }
@@ -494,7 +495,7 @@ ul, ol {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 10px;
-  color: var(--color-black);
+  color: var(--color-primary);
 }
 
 .value-item p {
@@ -513,7 +514,7 @@ ul, ol {
 }
 
 .team-card:hover {
-  border-color: var(--color-black);
+  border-color: var(--color-primary);
   transform: translateY(-4px);
   box-shadow: var(--box-shadow);
 }
@@ -531,7 +532,7 @@ ul, ol {
 .team-name {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--color-primary);
   margin-bottom: 12px;
 }
 
@@ -559,7 +560,7 @@ ul, ol {
 }
 
 .contact-card:hover {
-  border-color: var(--color-black);
+  border-color: var(--color-primary);
 }
 
 .contact-card-header {
@@ -572,7 +573,7 @@ ul, ol {
 .contact-label {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--color-black);
+  color: var(--color-primary);
 }
 
 .status-badge {
@@ -614,7 +615,7 @@ ul, ol {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--color-black);
+  color: var(--color-primary);
 }
 
 .contact-notice p {
@@ -627,7 +628,7 @@ ul, ol {
 .cta-section {
   text-align: center;
   padding: 72px 0;
-  background-color: var(--color-black);
+  background-color: var(--color-primary);
   color: var(--color-white);
 }
 
@@ -636,7 +637,7 @@ ul, ol {
 }
 
 .cta-section .section-desc {
-  color: #cccccc;
+  color: #dfd6eb;
   margin-bottom: 32px;
 }
 
@@ -647,7 +648,7 @@ ul, ol {
 
 .cta-section .btn-outline:hover {
   background-color: var(--color-white);
-  color: var(--color-black);
+  color: var(--color-primary);
 }
 
 /* 14. 頁尾 (共用 Footer) */
@@ -676,7 +677,7 @@ ul, ol {
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  color: var(--color-black);
+  color: var(--color-primary);
   margin-bottom: 8px;
 }
 
@@ -699,11 +700,11 @@ ul, ol {
 }
 
 .footer-link:hover {
-  color: var(--color-black);
+  color: var(--color-primary);
 }
 
 .footer-link.active {
-  color: var(--color-black);
+  color: var(--color-primary);
   font-weight: 600;
 }
 
@@ -774,7 +775,7 @@ ul, ol {
     padding: 24px 32px;
     gap: 20px;
     border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 20px rgba(74, 44, 107, 0.1);
     transform: translateY(-120%);
     opacity: 0;
     pointer-events: none;
